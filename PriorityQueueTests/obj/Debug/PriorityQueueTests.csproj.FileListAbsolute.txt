@@ -1,0 +1,7 @@
+c:\users\deva\documents\visual studio 2013\Projects\PriorityQueue\PriorityQueueTests\bin\Debug\PriorityQueueTests.dll
+c:\users\deva\documents\visual studio 2013\Projects\PriorityQueue\PriorityQueueTests\bin\Debug\PriorityQueueTests.pdb
+c:\users\deva\documents\visual studio 2013\Projects\PriorityQueue\PriorityQueueTests\bin\Debug\PriorityQueue.dll
+c:\users\deva\documents\visual studio 2013\Projects\PriorityQueue\PriorityQueueTests\bin\Debug\PriorityQueue.pdb
+c:\users\deva\documents\visual studio 2013\Projects\PriorityQueue\PriorityQueueTests\obj\Debug\PriorityQueueTests.csprojResolveAssemblyReference.cache
+c:\users\deva\documents\visual studio 2013\Projects\PriorityQueue\PriorityQueueTests\obj\Debug\PriorityQueueTests.dll
+c:\users\deva\documents\visual studio 2013\Projects\PriorityQueue\PriorityQueueTests\obj\Debug\PriorityQueueTests.pdb
