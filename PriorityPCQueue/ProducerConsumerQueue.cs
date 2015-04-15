@@ -6,16 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 namespace MarkoDevcic
-{
-    public enum Priority
-    {
-        Idle,
-        BelowNormal,
-        Normal,
-        AboveNormal,
-        TimeCritical
-    }
-
+{  
     public class ProducerConsumerQueue
     {
         private bool isShutdown = false;

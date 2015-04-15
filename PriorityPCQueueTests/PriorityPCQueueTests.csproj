@@ -55,9 +55,9 @@
     <Compile Include="ProducerConsumerQueueTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PriorityQueue\PriorityQueue.csproj">
+    <ProjectReference Include="..\PriorityPCQueue\PriorityPCQueue.csproj">
       <Project>{873784b8-2a80-451f-b246-0a728e8a8325}</Project>
-      <Name>PriorityQueue</Name>
+      <Name>PriorityPCQueue</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

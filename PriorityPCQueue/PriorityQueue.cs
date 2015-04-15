@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MarkoDevcic
 {
@@ -100,24 +98,24 @@ namespace MarkoDevcic
         public T PeekTopItem()
         {
             if (size == 0)
-                return default(T);
+                throw new InvalidOperationException("Empty queue");
 
             return items[0];
         }
 
         public T ExtractTopItem()
         {
-            var max = PeekTopItem();
-            if (size == 0)
-                return max;
-
+            var topItem = PeekTopItem();
+  
             items[0] = items[size - 1];
-            items[size - 1] = default(T);
             size--;
 
             ShiftDown();
 
-            return max;
+            if (size <= items.Length / 2)
+                Reduce();
+
+            return topItem;
         }
 
         private void ShiftDown()
@@ -147,9 +145,18 @@ namespace MarkoDevcic
             }
         }
 
+        private void Reduce()
+        {
+            if (size >= DEFAULT_CAPACITY)
+            {
+                var newSize = items.Length >> 1;
+                Resize(newSize);
+            }
+        }
+
         private void Enlarge()
         {
-            var newSize = size + DEFAULT_CAPACITY;
+            var newSize = size == 0 ? DEFAULT_CAPACITY : size << 1;
             Resize(newSize);
         }
 
@@ -172,6 +179,5 @@ namespace MarkoDevcic
             items[first] = items[second];
             items[second] = temp;
         }
-
     }
 }

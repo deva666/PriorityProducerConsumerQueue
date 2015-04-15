@@ -8,6 +8,7 @@ namespace PriorityQueueTests
     public class PriorityQueueTests
     {
         private const int ARRAY_SIZE = 500000;
+
         [TestMethod]
         public void InsertTest()
         {

@@ -1,7 +1,7 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MarkoDevcic;
 using System.Threading;
+using MarkoDevcic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace PriorityQueueTests
 {
@@ -37,8 +37,8 @@ namespace PriorityQueueTests
             {
                 Thread.Sleep(500);
             });
-            task.Wait();     
-       
+            task.Wait();
+
             Assert.IsFalse(task.IsFaulted);
             Assert.IsTrue(task.IsCompleted);
             Assert.IsTrue(task.Status == System.Threading.Tasks.TaskStatus.RanToCompletion);
