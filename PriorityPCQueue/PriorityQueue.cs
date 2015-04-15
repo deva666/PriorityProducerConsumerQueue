@@ -162,7 +162,7 @@ namespace MarkoDevcic
 
         private void Enlarge(int addToSize)
         {
-            var newSize = size + addToSize + DEFAULT_CAPACITY;
+            var newSize = size + addToSize;
             Resize(newSize);
         }
 
