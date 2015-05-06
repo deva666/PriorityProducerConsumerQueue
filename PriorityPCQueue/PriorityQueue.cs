@@ -91,7 +91,7 @@ namespace MarkoDevcic
 
         private int GetParent(int index)
         {
-            var parent = (index - 1) / 2;
+            var parent = (index - 1) >> 1;
             return parent;
         }
 
@@ -112,7 +112,7 @@ namespace MarkoDevcic
 
             ShiftDown();
 
-            if (size <= items.Length / 2)
+            if (size <= items.Length >> 1)
                 Reduce();
 
             return topItem;
