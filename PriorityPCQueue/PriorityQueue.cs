@@ -74,10 +74,10 @@ namespace MarkoDevcic
 
             var index = size++;
             items[index] = item;
-            index = ShiftUp(index);
+            ShiftUp(index);
         }
 
-        private int ShiftUp(int index)
+        private void ShiftUp(int index)
         {
             var parent = GetParent(index);
             while (index > 0 && items[index].CompareTo(items[parent]) >= 0)
@@ -86,7 +86,6 @@ namespace MarkoDevcic
                 index = parent;
                 parent = GetParent(index);
             }
-            return index;
         }
 
         private int GetParent(int index)
@@ -107,8 +106,7 @@ namespace MarkoDevcic
         {
             var topItem = PeekTopItem();
   
-            items[0] = items[size - 1];
-            size--;
+            items[0] = items[--size];
 
             ShiftDown();
 
@@ -150,26 +148,26 @@ namespace MarkoDevcic
             if (size >= DEFAULT_CAPACITY)
             {
                 var newSize = items.Length >> 1;
-                Resize(newSize);
+                Resize(newSize, false);
             }
         }
 
         private void Enlarge()
         {
             var newSize = size == 0 ? DEFAULT_CAPACITY : size << 1;
-            Resize(newSize);
+            Resize(newSize, true);
         }
 
         private void Enlarge(int addToSize)
         {
             var newSize = size + addToSize;
-            Resize(newSize);
+            Resize(newSize, true);
         }
 
-        private void Resize(int newSize)
+        private void Resize(int newSize, bool enlarge)
         {
             var newItems = new T[newSize];
-            Array.Copy(items, 0, newItems, 0, size);
+            Array.Copy(items, 0, newItems, 0, enlarge ?  size : newSize);
             items = newItems;
         }
 
