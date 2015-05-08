@@ -59,15 +59,28 @@ namespace PriorityQueueTests
             TestSort(range, queue);
         }
 
+        [TestMethod]
+        public void TryTakeTopItemTest()
+        {
+            var queue = new PriorityQueue<int>();
+            queue.Insert(1);
+
+            int topItem;
+            Assert.IsTrue(queue.TryTakeTopItem(out topItem));
+            Assert.AreEqual(topItem, 1);
+            Assert.IsFalse(queue.TryTakeTopItem(out topItem));
+        }
+
         private static void TestSort(int[] range, PriorityQueue<int> queue)
         {
             Array.Sort(range);
             for (int i = range.Length - 1; i >= 0; i--)
             {
-                var max = queue.ExtractTopItem();
+                var max = queue.TakeTopItem();
                 Assert.AreEqual(range[i], max);
             }
             Assert.AreEqual(queue.Size, 0);
         }
+
     }
 }

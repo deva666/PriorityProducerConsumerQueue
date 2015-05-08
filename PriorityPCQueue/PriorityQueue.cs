@@ -102,10 +102,10 @@ namespace MarkoDevcic
             return items[0];
         }
 
-        public T ExtractTopItem()
+        public T TakeTopItem()
         {
             var topItem = PeekTopItem();
-  
+
             items[0] = items[--size];
 
             ShiftDown();
@@ -114,6 +114,20 @@ namespace MarkoDevcic
                 Reduce();
 
             return topItem;
+        }
+
+        public bool TryTakeTopItem(out T item)
+        {
+            item = default(T);
+            if (size == 0)
+            {
+                return false;
+            }
+            else
+            {
+                item = TakeTopItem();
+                return true;
+            }
         }
 
         private void ShiftDown()
@@ -167,7 +181,7 @@ namespace MarkoDevcic
         private void Resize(int newSize, bool enlarge)
         {
             var newItems = new T[newSize];
-            Array.Copy(items, 0, newItems, 0, enlarge ?  size : newSize);
+            Array.Copy(items, 0, newItems, 0, enlarge ? size : newSize);
             items = newItems;
         }
 

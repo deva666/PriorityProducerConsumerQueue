@@ -54,7 +54,7 @@ namespace MarkoDevcic
                 {
                     if (queue.Size > 0)
                     {
-                        worker = queue.ExtractTopItem();
+                        worker = queue.TakeTopItem();
                     }
                 }
 
