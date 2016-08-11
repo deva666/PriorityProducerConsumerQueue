@@ -107,6 +107,7 @@ namespace MarkoDevcic
             var topItem = PeekTopItem();
 
             items[0] = items[--size];
+            items[size] = default(T);
 
             ShiftDown();
 
